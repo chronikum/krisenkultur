@@ -1,4 +1,9 @@
-# Krisenkultur
+# API
+
+## Beispielcall
+`https://krisenkultur.de/api/index.php?get_with_tagg=1`
+
+## Doku
 
 API Doku:
 
