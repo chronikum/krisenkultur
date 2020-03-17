@@ -1,8 +1,12 @@
 <!-- Toolbar -->
 <mat-toolbar color="secondary">
   <mat-toolbar-row>
-    <span><img class="image" src="assets/img/krisenkultur.png"></span>
+    <span class="logo-holder"><img class="image logo" src="assets/img/krisenkultur.png"></span>
     <span class="example-spacer"></span>
     <button (click)="openSubmissionModal()" mat-raised-button>Beitrag einreichen</button>
   </mat-toolbar-row>
 </mat-toolbar>
+<div class="container-fluid">
+<app-event-reference-holder [events]="events">
+</app-event-reference-holder>
+</div>
