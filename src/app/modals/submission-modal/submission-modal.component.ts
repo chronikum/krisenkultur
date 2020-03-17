@@ -25,6 +25,7 @@ export class SubmissionModalComponent implements OnInit {
       description: ['', [Validators.required]],
       eventLink: ['', [Validators.required]],
       date: ['', [Validators.required]],
+      time: ['', [Validators.required]],
     });
   }
   /**
@@ -38,6 +39,13 @@ export class SubmissionModalComponent implements OnInit {
    * Init hook
    */
   ngOnInit() {
+
+  }
+
+  /**
+   * Submit entry
+   */
+  submitEntry() {
 
   }
 

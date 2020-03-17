@@ -1,19 +1,28 @@
-<form class="col-xs-12 row" [formGroup]="submissionForm">
+<div class="form-holder row">
+<h1 class="col-xs-12">Reiche einen Beitrag ein</h1>
+<mat-hint>Wir kontrollieren deine Einreichungen. Bitte reiche keinen unangemessene Inhalte ein. Das können auch nicht offizielle medizinische Hinweise sein.</mat-hint>
+<form class="col-xs-12  row" [formGroup]="submissionForm">
   <mat-form-field class="col-xs-12">
     <input class="col-xs-12" formControlName="title" matInput
-                placeholder="Eventname">
+                placeholder="Wie heißt das Event?">
   </mat-form-field>
   <mat-form-field class="col-xs-12">
     <textarea class="col-xs-12" formControlName="description" matInput
-                placeholder="Eventname"></textarea>
+                placeholder="Um was geht es? Beschreibe das Event kurz."></textarea>
   </mat-form-field>
   <mat-form-field class="col-xs-12">
     <input class="col-xs-12" formControlName="eventlink" matInput
-                placeholder="eventLink">
+                placeholder="Link zum Streaming Event">
   </mat-form-field>
   <mat-form-field class="col-xs-12">
-    <input formControlName="date" matInput [matDatepicker]="myDatepicker">
+    <input placeholder="Datum" formControlName="date" matInput [matDatepicker]="myDatepicker">
     <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
     <mat-datepicker #myDatepicker></mat-datepicker>
   </mat-form-field>
+  <mat-form-field class="col-xs-12">
+    <input class="col-xs-12" formControlName="time" matInput
+                placeholder="HH:MM">
+  </mat-form-field>
 </form>
+<button (click)="submitEntry()" mat-raised-button>Einreichen</button>
+</div>
