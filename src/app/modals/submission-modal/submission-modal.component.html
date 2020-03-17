@@ -1,0 +1,14 @@
+<form class="col-xs-12 row" [formGroup]="submissionForm">
+  <mat-form-field class="col-xs-12">
+    <input class="col-xs-12" formControlName="title" matInput
+                placeholder="Eventname">
+  </mat-form-field>
+  <mat-form-field class="col-xs-12">
+    <textarea class="col-xs-12" formControlName="description" matInput
+                placeholder="Eventbeschreibung">
+  </mat-form-field>
+  <mat-form-field class="col-xs-12">
+    <input class="col-xs-12" formControlName="eventlink" matInput
+                placeholder="Wo findet das Event statt? (Link!)">
+  </mat-form-field>
+</form>
