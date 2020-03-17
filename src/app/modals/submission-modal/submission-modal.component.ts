@@ -10,6 +10,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class SubmissionModalComponent implements OnInit {
 
   /**
+   * Submission Form Group
+   */
+  submissionForm: FormGroup;
+
+  /**
    * Constructs Submission Modal
    * @param dialogRef
    * @param fb
@@ -18,14 +23,10 @@ export class SubmissionModalComponent implements OnInit {
     this.submissionForm = fb.group({
       title: ['', [Validators.required]],
       description: ['', [Validators.required]],
-      // tslint:disable-next-line: max-line-length
-      eventlink: ['', [Validators.required, Validators.pattern('[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)')]]
+      eventLink: ['', [Validators.required]],
+      date: ['', [Validators.required]],
     });
   }
-  /**
-   * FormGroup for SUbmSubmisson
-   */
-  submissionForm: FormGroup;
   /**
    * Close modal
    */

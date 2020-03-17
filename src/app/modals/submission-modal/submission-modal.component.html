@@ -5,10 +5,15 @@
   </mat-form-field>
   <mat-form-field class="col-xs-12">
     <textarea class="col-xs-12" formControlName="description" matInput
-                placeholder="Eventbeschreibung">
+                placeholder="Eventname"></textarea>
   </mat-form-field>
   <mat-form-field class="col-xs-12">
     <input class="col-xs-12" formControlName="eventlink" matInput
-                placeholder="Wo findet das Event statt? (Link!)">
+                placeholder="eventLink">
+  </mat-form-field>
+  <mat-form-field class="col-xs-12">
+    <input formControlName="date" matInput [matDatepicker]="myDatepicker">
+    <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+    <mat-datepicker #myDatepicker></mat-datepicker>
   </mat-form-field>
 </form>
