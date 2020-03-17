@@ -1,35 +1,82 @@
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
-// Plus imports for other components in your app.
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
+// Be sure that you only ever include 'mat-core' mixin once!
+// it should not be included for each theme.
 @include mat-core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$krisenkultur-primary: mat-palette($mat-indigo);
-$krisenkultur-accent: mat-palette($mat-pink, A200, A100, A400);
+// define a real custom palette (using http://mcg.mbitson.com)
+$md-primary: (
+    50 : #fef7e0,
+    100 : #feeab3,
+    200 : #fddd80,
+    300 : #fccf4d,
+    400 : #fbc426,
+    500 : #faba00,
+    600 : #f9b300,
+    700 : #f9ab00,
+    800 : #f8a300,
+    900 : #f69400,
+    A100 : #ffffff,
+    A200 : #fff5ea,
+    A400 : #ffdfb7,
+    A700 : #ffd39d,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
 
-// The warn palette is optional (defaults to red).
-$krisenkultur-warn: mat-palette($mat-red);
+$bv-orange: (
+    50: #ffffff,
+    100: #fff7f4,
+    200: #fecdbd,
+    300: #fc9977,
+    400: #fc8259,
+    500: #fb6c3b,
+    600: #fa551d,
+    700: #f44205,
+    800: #d63a04,
+    900: #b83204,
+    A100: #ffffff,
+    A200: #fff7f4,
+    A400: #fc8259,
+    A700: #f44205,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $black-87-opacity,
+        A700: white,
+    )
+);
 
-// Create the theme object (a Sass map containing all of the palettes).
-$krisenkultur-theme: mat-light-theme($krisenkultur-primary, $krisenkultur-accent, $krisenkultur-warn);
+// mandatory stuff for theming
+$bv-palette-primary: mat-palette($md-primary);
+$bv-palette-accent:  mat-palette($md-primary);
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include angular-material-theme($krisenkultur-theme);
+// include the custom theme components into a theme object
+$bv-theme: mat-light-theme($bv-palette-primary, $bv-palette-accent);
 
-/* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// include the custom theme object into the angular material theme
+@include angular-material-theme($bv-theme);
