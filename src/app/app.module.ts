@@ -8,7 +8,7 @@ import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/materia
 import { SubmissionModalComponent } from './modals/submission-modal/submission-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule, MatDatepicker, MatDatepickerInput, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { MatFormFieldModule, MatDatepicker, MatDatepickerInput, MatDatepickerModule, MatNativeDateModule, MatDivider, MatDividerModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
@@ -32,7 +32,8 @@ import { EventReferenceHolderComponent } from './components/event-reference-hold
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatDividerModule,
   ],
   exports: [
     MatDialogModule,
@@ -41,7 +42,8 @@ import { EventReferenceHolderComponent } from './components/event-reference-hold
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDividerModule
   ],
   providers: [
     { provide: MAT_DIALOG_DATA, useValue: {} },
