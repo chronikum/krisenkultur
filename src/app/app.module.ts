@@ -12,11 +12,15 @@ import { MatFormFieldModule, MatDatepicker, MatDatepickerInput, MatDatepickerMod
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
+import { ReferenceComponent } from './components/reference/reference.component';
+import { EventReferenceHolderComponent } from './components/event-reference-holder/event-reference-holder.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SubmissionModalComponent
+    SubmissionModalComponent,
+    ReferenceComponent,
+    EventReferenceHolderComponent
   ],
   imports: [
     BrowserModule,

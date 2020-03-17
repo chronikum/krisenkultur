@@ -1,9 +1,9 @@
+import { EventReference } from './../models/event';
 import { Injectable } from '@angular/core';
 import { filter, map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import {Event} from '../models/event';
-import {Tag} from '../models/tag';
+import { Tag } from '../models/tag';
 
 /**
  * Service to communicate with the backend
@@ -53,14 +53,14 @@ export class ApiClientService {
   /**
    * Get event by id
    */
-  getEventsById(id: number): Observable<Event> {
-    return this.http.get<Event>(this.endpoint + '?get_by_id=' + id)
+  getEventsById(id: number): Observable<EventReference> {
+    return this.http.get<EventReference>(this.endpoint + '?get_by_id=' + id)
   }
 
   /**
    * Get events by date (%d.%m.%Y)
    */
-  getEventsByDate(date: string): Observable<Event[]> {
-    return this.http.get<Event[]>(this.endpoint + '?get_events_by_date=' + date)
+  getEventsByDate(date: string): Observable<EventReference[]> {
+    return this.http.get<EventReference[]>(this.endpoint + '?get_events_by_date=' + date)
   }
 }

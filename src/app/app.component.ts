@@ -2,7 +2,7 @@ import { SubmissionModalComponent } from './modals/submission-modal/submission-m
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { ApiClientService } from './services/api-client.service';
-import { Event } from './models/event';
+import { EventReference } from './models/event';
 import { Tag } from './models/tag';
 
 
@@ -14,14 +14,17 @@ import { Tag } from './models/tag';
 export class AppComponent {
   title = 'krisenkultur';
 
-
+  /**
+   * Loaded events
+   */
+  events: [EventReference];
   /**
    * Init hook
    * @param dialog
    * @param apiClient
    */
   constructor(public dialog: MatDialog, private apiClient: ApiClientService) {
-
+    this.testApi()
   }
 
 
@@ -29,10 +32,21 @@ export class AppComponent {
    * APi Testing function
    */
   testApi() {
-    let result = this.apiClient.getEventsById(1).subscribe(result => {
-      console.log('one element', result as Event)
+    let result = this.apiClient.getEventsById(3).subscribe(result => {
+      console.log('one element', result as EventReference)
+      this.events = [result as EventReference];
+      this.events.push(result as EventReference);
+      this.events.push(result as EventReference);
+      this.events.push(result as EventReference);
+      this.events.push(result as EventReference);
+      this.events.push(result as EventReference);
+      this.events.push(result as EventReference);
+      this.events.push(result as EventReference);
+      this.events.push(result as EventReference);
+      this.events.push(result as EventReference);
+
     });
-    let result2 = this.apiClient.getEventsByDate("2020-03-15 18:54:06").subscribe(result => {
+    let result2 = this.apiClient.getEventsByDate("2020-03-17").subscribe(result => {
       console.log("by date", result)
     });
     let result3 = this.apiClient.getTagsForEvent(1).subscribe(result => {
