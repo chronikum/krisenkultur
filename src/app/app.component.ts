@@ -17,7 +17,7 @@ export class AppComponent {
   /**
    * Loaded events
    */
-  events: [EventReference];
+  events: EventReference[];
   /**
    * Init hook
    * @param dialog
@@ -27,6 +27,16 @@ export class AppComponent {
     this.testApi()
   }
 
+
+  /**
+   * Load data
+   */
+  loadData() {
+    let result = this.apiClient.getAll().subscribe(events => {
+      console.log(this.events);
+      this.events = events as EventReference[];
+    })
+  }
 
   /**
    * APi Testing function

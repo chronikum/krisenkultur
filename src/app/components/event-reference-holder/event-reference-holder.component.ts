@@ -8,9 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EventReferenceHolderComponent implements OnInit {
   /**
-   * Events to be hold in 
+   * Events to be hold in
    */
-  @Input() events: [EventReference];
+  @Input() events: EventReference[];
   constructor() { }
 
   ngOnInit() {

@@ -63,4 +63,11 @@ export class ApiClientService {
   getEventsByDate(date: string): Observable<EventReference[]> {
     return this.http.get<EventReference[]>(this.endpoint + '?get_events_by_date=' + date)
   }
+
+  // /**
+  //  * Create event
+  //  */
+  // createEvent(event: EventReference): Observable<EventReference> {
+  //   return this.http.get<EventReference>(this.endpoint + '?createEvent=' + date)
+  // }
 }
